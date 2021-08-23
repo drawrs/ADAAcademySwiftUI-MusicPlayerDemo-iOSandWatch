@@ -42,11 +42,8 @@ struct ContentView: View {
             
             // MARK: 2nd page
             List(songModel.playlist){ song in
-                SongCellCustom(song: song,
-                               songModel: songModel)
+                SongCellCustom(songModel: songModel, song: song)
             }
-            
-            Text("Third")
         }
         .tabViewStyle(PageTabViewStyle())
         
@@ -59,50 +56,3 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-struct SongCellCustom : View {
-    
-    let song: Song
-    var songModel: SongModel
-    
-    @AppStorage("song", store: UserDefaults(suiteName: "group.sepotipaiUD")) var songData : Data = Data()
-    
-    var body: some View{
-        Button {
-            if songModel.titleSongPlayed == "\(song.singer) - \(song.title)" {
-                songModel.isPlayingSomething.toggle()
-            } else {
-                songModel.isPlayingSomething = true
-            }
-            
-            songModel.titleSongPlayed = "\(song.singer) - \(song.title)"
-            saveLastPlay()
-            sendSignalToiPhone()
-            print("yang diputar \(songModel.titleSongPlayed) yang dimana \(song.title)")
-        } label: {
-            HStack{
-                Text(song.singer + " - " + song.title)
-                Spacer()
-                
-                Image(systemName: (songModel.titleSongPlayed == "\(song.singer) - \(song.title)" && songModel.isPlayingSomething) ? "pause.circle.fill" : "play.circle.fill")
-                    .font(.system(size: 30))
-                    .foregroundColor(.green)
-            }
-        }
-    }
-    
-    func saveLastPlay(){
-        guard let lastPlay = try? JSONEncoder().encode(song) else {return}
-        
-        songData = lastPlay
-        print("sudah tersimpan")
-    }
-    
-    func sendSignalToiPhone() {
-        // MARK: Send signal to watch
-        self.songModel.watchConnectivitySession.sendMessage(["isPlaying": songModel.isPlayingSomething,
-                                                             "songPlayedTitle": songModel.titleSongPlayed],
-                                                            replyHandler: nil) { error in
-            print("Gagal kirim \(error)")
-        }
-    }
-}

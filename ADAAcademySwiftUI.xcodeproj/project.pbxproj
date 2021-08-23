@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		363CDBA126D3912600E6FF63 /* SongCellCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363CDBA026D3912600E6FF63 /* SongCellCustom.swift */; };
+		363CDBA226D3912600E6FF63 /* SongCellCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363CDBA026D3912600E6FF63 /* SongCellCustom.swift */; };
+		363CDBA326D3912600E6FF63 /* SongCellCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363CDBA026D3912600E6FF63 /* SongCellCustom.swift */; };
 		365B88CD26D0B22100612750 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 365B88CC26D0B22100612750 /* Assets.xcassets */; };
 		365B88D426D0B22100612750 /* SepotiWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 365B88D326D0B22100612750 /* SepotiWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		365B88D926D0B22100612750 /* ADAAcademySwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365B88D826D0B22100612750 /* ADAAcademySwiftUIApp.swift */; };
@@ -99,6 +102,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		363CDBA026D3912600E6FF63 /* SongCellCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCellCustom.swift; sourceTree = "<group>"; };
 		365B88CA26D0B22000612750 /* SepotiWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SepotiWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		365B88CC26D0B22100612750 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		365B88CE26D0B22100612750 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -160,6 +164,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		363CDBA426D394BB00E6FF63 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				9BA6CDBF26B7DA0100BC12AE /* SongModel.swift */,
+				363CDBA026D3912600E6FF63 /* SongCellCustom.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		365B88CB26D0B22000612750 /* SepotiWatch */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,11 +233,11 @@
 		9BA6CD6D26B4F55E00BC12AE /* ADAAcademySwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				363CDBA426D394BB00E6FF63 /* Shared */,
 				9BA6CDC126B7DAA600BC12AE /* ADAAcademySwiftUI.entitlements */,
 				9BA6CD6E26B4F55E00BC12AE /* ADAAcademySwiftUIApp.swift */,
 				9BA6CD7026B4F55E00BC12AE /* ContentView.swift */,
 				365B88F626D0B58C00612750 /* Song.swift */,
-				9BA6CDBF26B7DA0100BC12AE /* SongModel.swift */,
 				9BA6CD7226B4F55F00BC12AE /* Assets.xcassets */,
 				9BA6CD7726B4F55F00BC12AE /* Persistence.swift */,
 				9BA6CD7C26B4F55F00BC12AE /* Info.plist */,
@@ -428,6 +441,7 @@
 				365B88DD26D0B22100612750 /* NotificationController.swift in Sources */,
 				365B88DB26D0B22100612750 /* ContentView.swift in Sources */,
 				365B88E126D0B22100612750 /* ComplicationController.swift in Sources */,
+				363CDBA326D3912600E6FF63 /* SongCellCustom.swift in Sources */,
 				365B88D926D0B22100612750 /* ADAAcademySwiftUIApp.swift in Sources */,
 				365B88DF26D0B22100612750 /* NotificationView.swift in Sources */,
 			);
@@ -442,6 +456,7 @@
 				9BA6CD7826B4F55F00BC12AE /* Persistence.swift in Sources */,
 				9BA6CDC026B7DA0100BC12AE /* SongModel.swift in Sources */,
 				9BA6CD7126B4F55E00BC12AE /* ContentView.swift in Sources */,
+				363CDBA126D3912600E6FF63 /* SongCellCustom.swift in Sources */,
 				9BA6CD6F26B4F55E00BC12AE /* ADAAcademySwiftUIApp.swift in Sources */,
 				9BA6CD7B26B4F55F00BC12AE /* ADAAcademySwiftUI.xcdatamodeld in Sources */,
 			);
@@ -451,6 +466,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				363CDBA226D3912600E6FF63 /* SongCellCustom.swift in Sources */,
 				365B88F826D0B59500612750 /* Song.swift in Sources */,
 				9BA6CDDD26B7DC8C00BC12AE /* SongModel.swift in Sources */,
 				9BA6CDD326B7DC3F00BC12AE /* SepotipaiWidget.intentdefinition in Sources */,

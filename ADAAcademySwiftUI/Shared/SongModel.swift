@@ -8,7 +8,7 @@
 import SwiftUI
 import WatchConnectivity
 
-public class SongModel: NSObject, ObservableObject, WCSessionDelegate {
+class SongModel: NSObject, ObservableObject, WCSessionDelegate {
     
     @Published var playlist = [Song]()
     @Published var titleSongPlayed: String = ""
@@ -31,20 +31,21 @@ public class SongModel: NSObject, ObservableObject, WCSessionDelegate {
         session.activate()
     }
     
-    public func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         
     }
     
-    public func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
         DispatchQueue.main.async {
             self.isPlayingSomething = message["isPlaying"] as! Bool
+            self.titleSongPlayed = message["songPlayedTitle"] as! String
             print("ada yang masuk \(self.isPlayingSomething)")
         }
     }
     
     #if os(iOS)
-    public func sessionDidBecomeInactive(_ watchConnectivitySession: WCSession) { }
-    public func sessionDidDeactivate(_ watchConnectivitySession: WCSession) {
+    func sessionDidBecomeInactive(_ watchConnectivitySession: WCSession) { }
+    func sessionDidDeactivate(_ watchConnectivitySession: WCSession) {
         watchConnectivitySession.activate()
     }
     #endif
